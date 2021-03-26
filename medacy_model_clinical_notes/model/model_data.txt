@@ -1,33 +1,38 @@
 CustomPipeline
 A custom pipeline configured from a JSON file
 
-Report created at Wed Jan 22 09:09:18 2020
+Report created at Fri Mar 26 10:30:43 2021
 
-MedaCy Version: 1.0.0
-SpaCy Version: 2.2.2
-SpaCy Model: core_web_sm, version 2.2.5
-Entities: ['Route', 'Reason', 'ADE', 'Form', 'Frequency', 'Duration', 'Drug', 'Dosage', 'Strength']
+MedaCy Version: 1.0.1
+SpaCy Version: 2.3.5
+SpaCy Model: core_web_sm, version 2.3.1
+Entities: ['Form', 'ADE', 'Reason', 'Route', 'Strength', 'Dosage', 'Duration', 'Drug', 'Frequency']
 Constructor arguments: {}
 
-Feature Extractor: FeatureExtractor at /home/farnsworthsw/projects/medaCy/medacy/pipeline_components/feature_extractors/discrete_feature_extractor.py
-        Window Size: 3
-        SpaCy Features: ['text', 'pos_', 'suffix_', 'prefix_', 'shape_']
-Learner: CRF_l2sgd at /home/farnsworthsw/venvs/medaCy/lib64/python3.6/site-packages/sklearn_crfsuite/estimator.py
-Tokenizer: SystematicReviewTokenizer at /home/farnsworthsw/projects/medaCy/medacy/pipeline_components/tokenizers/systematic_review_tokenizer.py
+Feature Overlayers:
 
-Pipeline configured from a JSON: {"learner": "CRF", "spacy_pipeline": "en_core_web_sm", "window_size": 3, "tokenizer": "systematic_review", "spacy_features": ["text", "pos_", "suffix_", "prefix_", "shape_"]}
-JSON path: ./n2c2_pipeline.json
+<class 'medacy.pipeline_components.feature_overlayers.metamap.metamap_all_types_component.MetaMapAllTypesOverlayer'> at /opt/python/lib/python3.9/site-packages/medacy/pipeline_components/feature_overlayers/metamap/metamap_all_types_component.py
+	cuis = True
+	merge_tokens = False
 
+Feature Extractor: FeatureExtractor at /opt/python/lib/python3.9/site-packages/medacy/pipeline_components/feature_extractors/discrete_feature_extractor.py
+	Window Size: 3
+	SpaCy Features: ['text', 'pos_', 'suffix_', 'prefix_', 'shape_']
+Learner: CRF_l2sgd at /opt/python/lib/python3.9/site-packages/sklearn_crfsuite/estimator.py
+Tokenizer: SystematicReviewTokenizer at /opt/python/lib/python3.9/site-packages/medacy/pipeline_components/tokenizers/systematic_review_tokenizer.py
 
-| Entity (Count)   |   Precision |   Recall |    F1 |   F1_Min |   F1_Max |
-|------------------+-------------+----------+-------+----------+----------|
-| ADE (840)        |       0.382 |    0.146 | 0.198 |    0.151 |    0.255 |
-| Dosage (3744)    |       0.931 |    0.895 | 0.912 |    0.903 |    0.919 |
-| Drug (14311)     |       0.929 |    0.832 | 0.878 |    0.864 |    0.887 |
-| Duration (517)   |       0.844 |    0.682 | 0.746 |    0.701 |    0.824 |
-| Form (5883)      |       0.927 |    0.92  | 0.922 |    0.892 |    0.936 |
-| Frequency (5517) |       0.912 |    0.853 | 0.873 |    0.733 |    0.918 |
-| Reason (3299)    |       0.576 |    0.328 | 0.406 |    0.384 |    0.432 |
-| Route (4278)     |       0.962 |    0.913 | 0.937 |    0.93  |    0.945 |
-| Strength (5859)  |       0.956 |    0.906 | 0.93  |    0.913 |    0.938 |
-| system (44248)   |       0.898 |    0.825 | 0.854 |    0.818 |    0.865 |
+Pipeline configured from a JSON: {"learner": "CRF", "spacy_pipeline": "en_core_web_sm", "spacy_features": ["text", "pos_", "suffix_", "prefix_", "shape_"], "window_size": 3, "tokenizer": "systematic_review", "metamap": "/opt/app/meta-map/bin", "semantic_types": "all"}
+JSON path: conf/crf.json
+
+| Entity (Count)    |   Precision |   Recall |    F1 |   F1_Min |   F1_Max |
+|-------------------+-------------+----------+-------+----------+----------|
+| ADE (1584)        |       0.311 |    0.192 | 0.216 |    0.179 |    0.272 |
+| Dosage (6902)     |       0.927 |    0.922 | 0.924 |    0.908 |    0.936 |
+| Drug (26800)      |       0.921 |    0.877 | 0.898 |    0.888 |    0.902 |
+| Duration (970)    |       0.782 |    0.744 | 0.753 |    0.611 |    0.808 |
+| Form (11010)      |       0.924 |    0.902 | 0.911 |    0.855 |    0.945 |
+| Frequency (10293) |       0.879 |    0.914 | 0.893 |    0.808 |    0.914 |
+| Reason (6400)     |       0.56  |    0.38  | 0.437 |    0.398 |    0.461 |
+| Route (8989)      |       0.951 |    0.926 | 0.938 |    0.927 |    0.946 |
+| Strength (10921)  |       0.956 |    0.923 | 0.939 |    0.927 |    0.947 |
+| system (83869)    |       0.886 |    0.858 | 0.868 |    0.848 |    0.879 |

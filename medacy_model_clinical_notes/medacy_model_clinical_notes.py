@@ -40,5 +40,5 @@ def load():
     pipeline = N2C2Pipeline(entities=entities)
     model = Model(pipeline)
     model_directory = resource_filename('medacy_model_clinical_notes', 'model')
-    model.load(os.path.join(model_directory, 'n2c2_2020_jan_22.pkl'))
+    model.load(os.path.join(model_directory, 'n2c2_2021_mar_26.pkl'))
     return model
