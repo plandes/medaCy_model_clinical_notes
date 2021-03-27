@@ -14,8 +14,8 @@ This is the light-weight version (no metamap) of medaCy's model for extracting 9
 # Results
 Model generalization ability is evaluated over 202 patient clinical note files not seen during training. *Strict* indicates exact matches of spans, *Lenient* indicates a fuzzy matching of spans (model predictions are off by single characters).
 
-| Entity (Count)    |   Precision |   Recall |    F1 |   F1Min  |   F1Max  |
-|-------------------+-------------+----------+-------+----------+----------|
+| Entity (Count)    |   Precision |   Recall |    F1 |   F1_Min |   F1_Max |
+|-------------------|-------------|----------|-------|----------|----------|
 | ADE (1584)        |       0.311 |    0.192 | 0.216 |    0.179 |    0.272 |
 | Dosage (6902)     |       0.927 |    0.922 | 0.924 |    0.908 |    0.936 |
 | Drug (26800)      |       0.921 |    0.877 | 0.898 |    0.888 |    0.902 |
